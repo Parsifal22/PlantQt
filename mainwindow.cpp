@@ -91,10 +91,9 @@ void MainWindow::on_Exit_clicked()
 
 void MainWindow::on_Connect_clicked()
 {
-
-    e.getDLL(L"C:/Users/Nikita/source/Qt/DLL/IAS0410PlantEmulator.dll");
-
-    e.setEmulator("C:/Users/Nikita/source/Qt/DLL/IAS0410Plants.txt", 4);
+    //Highly recommend using Full Path
+    e.getDLL(L"./DLL/IAS0410PlantEmulator.dll");
+    e.setEmulator("./DLL/IAS0410Plants.txt", 4);
 
     if (ifstream("C:\\Users\\Nikita\\source\\repos\\PlantSTL\\result.bin", ios::binary | ios::ate).tellg() != 0 && c.getSizeConvertedData() == 0) {
         c.readFile();
